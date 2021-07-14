@@ -1,7 +1,7 @@
 nav {
   height: 75px;
   background-color: black;
-  color: white;
+  color:crimson;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -11,7 +11,7 @@ nav {
 }
 .h1-logo a {
   text-decoration: none;
-  color: white;
+  color:crimson;
 }
 .h1-logo h1 {
   font-size: 20px;
@@ -24,10 +24,10 @@ div ul li {
 }
 div ul li a {
   text-decoration: none;
-  color: white;
+  color: crimson;
 }
 .selected {
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid crimson;
 }
 .right-side-nav ul li:not(:last-child) {
   margin-right: 15px;

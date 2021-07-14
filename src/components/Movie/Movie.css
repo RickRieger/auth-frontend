@@ -13,21 +13,74 @@ form input[name="country"] {
 form input:focus{
   background-color:transparent !important;
   box-shadow:none !important;
-  color:white!important;
+  /* color:white!important; */
 }
-.container-movie {
-  width: 500px;
-  height: 500px;
-  background-color: white;
-  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-}
-/* :: placeholder{
-  color:white;
-
+/* body{
+  display:flex;
 } */
+.container-movie {
+  display:flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+  width: 70%;
+  margin:auto;
+  justify-content:center;
+  align-items: center;
+
+
+}
+.img-container-outer{
+  display:flex;
+  width:180px;
+  height:240px;
+  background-color: black;
+  margin:60px;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+  box-shadow: 0 0 .5em rgb(249, 116, 143);
+
+}
+.img-container-inner{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  color:crimson;
+  width:100%;
+  height:100%;
+}
+.year{
+  display:flex,
+}
+.poster{
+  display:flex,
+ 
+}
+.title{
+  display:flex,
+}
+img{
+  width:180px;
+  height:180px;
+}
+
+.effect:before{
+  content: '';
+  display: block;
+  position: absolute;
+  height: 0%;
+  width:100%;
+  bottom: 0;
+  transition: height 0.5s ease-out;
+  background: linear-gradient(to bottom, transparent 0%, black 100%);
+  text-decoration: none;
+  border-radius: 40px;
+
+}
+.effect:hover:before{
+  height:100%;
+}
+
+
+

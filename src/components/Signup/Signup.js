@@ -31,7 +31,7 @@ export class Signup extends Component {
     if (isAuth){
       this.props.history.push("/movie");
     }
-  }
+  };
   handleOnChange = (event) => {
     this.setState(
       {
@@ -59,7 +59,6 @@ export class Signup extends Component {
       }
     );
   };
-
   handleConfirmPasswordInput = () => {
     if (this.state.password !== this.state.confirmPassword) {
       this.setState({

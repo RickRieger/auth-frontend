@@ -4,6 +4,7 @@ import jwtDecode from "jwt-decode";
 import { toast } from "react-toastify";
 import Axios from "../utils/Axios";
 import checkIfUserIsAuth from "../utils/checkIsUserIsAuth";
+import setAxiosAuthToken from "../utils/setAxiosAuthToken";
 import "./Login.css";
 
 export class Login extends Component {
@@ -18,6 +19,7 @@ export class Login extends Component {
   };
 
   componentDidMount() {
+    console.log(this.props);
     let isAuth = checkIfUserIsAuth();
     if (isAuth){
       this.props.history.push("/movie");
@@ -75,6 +77,27 @@ export class Login extends Component {
       }
     }
   }
+  // componentDidUpdate(prevProps, prevState) {
+  //   //these are always the first two args. this func is run after component did mount and runs after state change
+  //   if (prevState.isButtonDisabled === true) {
+  //     //if the button was already disabled
+  //     if (this.state.emailOnFocus && this.state.passwordOnFocus) {
+  //       //and we had focus on these two fields
+  //       if (
+  //         //and there are no errors and there is something within these fields then
+  //         this.state.emailError.length === 0 &&
+  //         this.state.passwordError.length === 0 &&
+  //         this.state.email &&
+  //         this.state.password
+  //       ) {
+  //         this.setState({
+  //           //enable the button
+  //           isButtonDisabled: false,
+  //         });
+  //       }
+  //     }
+  //   }
+  // }
   handleInputOnFocus = (event) => {
     if (!this.state[`${event.target.name}OnFocus`]) {
       this.setState({
@@ -82,6 +105,7 @@ export class Login extends Component {
       });
     }
   };
+
   handleOnSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -92,6 +116,9 @@ export class Login extends Component {
       let jwtToken = result.data.payload;
 
       console.log(jwtToken);
+      //setting jwt token to out Axios instance
+      setAxiosAuthToken(jwtToken);
+
       let decodedToken = jwtDecode(jwtToken);
       console.log(decodedToken);
 
