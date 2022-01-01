@@ -27,7 +27,7 @@ export class FriendList extends Component {
   handleUpdateClick = async (id) => {
     try {
       let updatedFriend = await Axios.put(
-        `/api/friend/update-friend-by-id/${id}`,
+        `/friend/update-friend-by-id/${id}`,
         {
           firstName: this.state.firstName,
           lastName: this.state.lastName,
@@ -45,7 +45,7 @@ export class FriendList extends Component {
   handleDeleteClick = async (id) => {
     try {
       let deletedFriend = await Axios.delete(
-        `/api/friend/delete-friend-by-id/${id}`
+        `/friend/delete-friend-by-id/${id}`
       );
       console.log(deletedFriend);
       this.props.handleDeleteByFriend(deletedFriend.data.payload);

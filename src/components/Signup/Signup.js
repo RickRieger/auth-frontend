@@ -172,7 +172,7 @@ export class Signup extends Component {
         username: this.state.username,
         password: this.state.password,
       };
-      let success = await Axios.post("/api/user/sign-up", userInputObj);
+      let success = await Axios.post("/user/sign-up", userInputObj);
       console.log(success);
       toast.success(`User created - Please login`, {
         position: "top-center",

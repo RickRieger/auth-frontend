@@ -32,7 +32,7 @@ export class MovieDetail extends Component {
 
   fetchAllFriends = async () => {
     try {
-      let allFriends = await Axios.get("/api/friend/get-all-friends");
+      let allFriends = await Axios.get("/friend/get-all-friends");
 
       this.setState({
         friendsArray: allFriends.data.friends,
@@ -109,7 +109,7 @@ export class MovieDetail extends Component {
     try {
       let message = this.state.friendMessage;
 
-      let result = await Axios.post("/api/twilio/send-sms", {
+      let result = await Axios.post("/twilio/send-sms", {
         to: this.state.selectedFriendMobileNumber,
         message: message,
       });

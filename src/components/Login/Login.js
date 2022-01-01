@@ -109,7 +109,7 @@ export class Login extends Component {
   handleOnSubmit = async (event) => {
     event.preventDefault();
     try {
-      let result = await Axios.post("/api/user/login", {
+      let result = await Axios.post("/user/login", {
         email: this.state.email,
         password: this.state.password,
       });

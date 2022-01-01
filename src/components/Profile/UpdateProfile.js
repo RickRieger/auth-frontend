@@ -13,7 +13,7 @@ export class UpdateProfile extends Component {
   }
   handleFetchUserInfo = async () => {
     try {
-      let fetchedUserInfo = await Axios.get("/api/user/get-user-info");
+      let fetchedUserInfo = await Axios.get("/user/get-user-info");
       this.setState({
         firstName: fetchedUserInfo.data.payload.firstName,
         lastName: fetchedUserInfo.data.payload.lastName,
@@ -33,7 +33,7 @@ export class UpdateProfile extends Component {
     event.preventDefault();
     try {
       let updatedUserProfile = await Axios.put(
-        "/api/user/update-user-profile",
+        "/user/update-user-profile",
         {
           firstName: this.state.firstName,
           lastName: this.state.lastName,

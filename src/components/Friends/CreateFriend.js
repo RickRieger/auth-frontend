@@ -20,7 +20,7 @@ export class CreateFriend extends Component {
   handleFriendSubmit = async (event) => {
     event.preventDefault();
     try {
-      let createdFriend = await Axios.post("/api/friend/create-friend", {
+      let createdFriend = await Axios.post("/friend/create-friend", {
         firstName: this.state.friendFirstName,
         lastName: this.state.friendLastName,
         mobileNumber: this.state.friendMobileNumber,
@@ -39,7 +39,7 @@ export class CreateFriend extends Component {
   };
   handleGetAllFriends = async () => {
     try {
-      let getAllFriends = await Axios.get("/api/friend/get-all-friends");
+      let getAllFriends = await Axios.get("/friend/get-all-friends");
       this.setState({
         friendArray: getAllFriends.data.friends,
       });
