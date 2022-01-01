@@ -49,14 +49,14 @@ export class App extends Component {
 
   render() {
     return (
-      <>
+      <React.Fragment>
         <ToastContainer position="top-center" />
         <MainRouter
           user={this.state.user}
           handleUserLogin={this.handleUserLogin}
           handleUserLogout={this.handleUserLogout}
         />
-      </>
+      </React.Fragment>
     );
   }
 }
