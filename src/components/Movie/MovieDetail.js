@@ -114,9 +114,9 @@ export class MovieDetail extends Component {
         message: message,
       });
 
-      toast.success("Message sent!");
+      toast.success('Message sent!');
     } catch (e) {
-      console.log(e.response);
+      toast.error(e.response.data.message);
     }
   };
 
@@ -147,9 +147,7 @@ export class MovieDetail extends Component {
             {this.showMovieDetail()}
             <div style={{ width: 250, margin: '0 auto', textAlign: 'center' }}>
               <select onChange={this.handleSelectChange}>
-                <option value=''>
-                  please select
-                </option>
+                <option value=''>please select</option>
                 {this.state.friendsArray.map((friend) => {
                   return (
                     <option key={friend._id} value={JSON.stringify(friend)}>

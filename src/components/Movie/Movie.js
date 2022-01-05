@@ -206,7 +206,7 @@ export class Movie extends Component {
                   style={{
                     marginLeft: 15,
                     marginRight: 15,
-                    color: currentPage === number ? "red" : "black",
+                    color: currentPage === number ? "red" : "#7c7979",
                     cursor: "pointer",
                   }}
                   key={number}
@@ -359,6 +359,7 @@ export class Movie extends Component {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
+              color:'white',
               marginTop: 50,
             }}
           >
