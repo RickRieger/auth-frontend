@@ -139,7 +139,7 @@ export class Login extends Component {
     const { email, emailError, password, passwordError, canSubmit } =
       this.state;
     return (
-      <div className="container">
+      <div className="container" style={{backgroundColor:'rgb(58 58 58)'}}>
         <div className="form-text">Login</div>
         <div className="form-div">
           <form className="form" onSubmit={this.handleOnSubmit}>

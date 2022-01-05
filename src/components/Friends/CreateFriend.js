@@ -98,7 +98,7 @@ export class CreateFriend extends Component {
             </div>
             <div className="input-div">
               <input
-                placeholder="mobile number"
+                placeholder="mobile number 10 digits only, no dashes "
                 onChange={this.handleOnFriendChange}
                 name="friendMobileNumber"
                 value={this.state.friendMobileNumber}

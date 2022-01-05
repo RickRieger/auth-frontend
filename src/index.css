@@ -2,7 +2,7 @@ html{
   width:100vw;
 }
 body {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)),url("https://images.unsplash.com/photo-1623179007436-1d366e78ba68?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2767&q=80");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.837),rgba(0, 0, 0, 0.83)),url("https://images.unsplash.com/photo-1623179007436-1d366e78ba68?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2767&q=80");
   background-position:center;
   background-size: cover;
   background-repeat: no-repeat;

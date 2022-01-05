@@ -256,7 +256,7 @@ export class Signup extends Component {
       confirmPasswordError,
     } = this.state;
     return (
-      <div className="container">
+      <div className="container" style={{backgroundColor:'rgb(58 58 58)'}}>
         <div className="form-text">Sign up</div>
         <div className="form-div">
           <form className="form" onSubmit={this.handleOnSubmit}>
