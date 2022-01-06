@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import Axios from "../utils/Axios";
 import jwtDecode from "jwt-decode";
 import setAxiosAuthToken from "../utils/setAxiosAuthToken";
-
+import "./Home.css";
 
 export class Home extends Component {
   handleOnSubmit = async (event) => {
@@ -39,7 +39,7 @@ export class Home extends Component {
     return (
       <div style={{textAlign: "center", marginTop: "15%", fontSize:"45px", color:'crimson'}}>
         <p>Welcome to the Movies with Friends</p>
-        <button style={{padding:'10px', borderRadius:'10px', backgroundColor:'crimson'}} onClick={this.handleOnSubmit}>Enter as a guest</button>
+        <button class='home_button' onClick={this.handleOnSubmit}>Enter as a guest</button>
       </div>
     )
   }
