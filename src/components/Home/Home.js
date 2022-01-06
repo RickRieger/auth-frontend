@@ -15,12 +15,12 @@ export class Home extends Component {
       });
       let jwtToken = result.data.payload;
 
-      console.log(jwtToken);
+
       //setting jwt token to out Axios instance
       setAxiosAuthToken(jwtToken);
 
       let decodedToken = jwtDecode(jwtToken);
-      console.log(decodedToken);
+
 
       this.props.handleUserLogin(decodedToken)
       window.localStorage.setItem("jwtToken", jwtToken);
