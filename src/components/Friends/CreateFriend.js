@@ -43,10 +43,8 @@ export class CreateFriend extends Component {
       this.setState({
         friendArray: getAllFriends.data.friends,
       });
-      console.log(this.state.friendArray, 'array--');
     } catch (e) {
-      console.log(e,'error man');
-      // toast.error(e.response.data.payload);
+      toast.error(e.response.data.message);
     }
   };
 

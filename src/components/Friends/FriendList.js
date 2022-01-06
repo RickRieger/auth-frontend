@@ -26,14 +26,11 @@ export class FriendList extends Component {
 
   handleUpdateClick = async (id) => {
     try {
-      let updatedFriend = await Axios.put(
-        `/friend/update-friend-by-id/${id}`,
-        {
-          firstName: this.state.firstName,
-          lastName: this.state.lastName,
-          mobileNumber: this.state.mobileNumber,
-        }
-      );
+      let updatedFriend = await Axios.put(`/friend/update-friend-by-id/${id}`, {
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
+        mobileNumber: this.state.mobileNumber,
+      });
       console.log(updatedFriend);
       this.props.handleUpdatedFriendData(updatedFriend.data.payload);
       this.handleToggle();
@@ -47,7 +44,7 @@ export class FriendList extends Component {
       let deletedFriend = await Axios.delete(
         `/friend/delete-friend-by-id/${id}`
       );
-      console.log(deletedFriend);
+
       this.props.handleDeleteByFriend(deletedFriend.data.payload);
     } catch (e) {
       toast.error(e.response.data.payload);
@@ -55,7 +52,6 @@ export class FriendList extends Component {
   };
 
   render() {
-    console.log(this.state);
     const { friend } = this.props;
     const { toggle } = this.state;
     return (
@@ -64,21 +60,21 @@ export class FriendList extends Component {
           <>
             <td>
               <input
-                name="firstName"
+                name='firstName'
                 onChange={this.handleUpdateFriendChange}
                 defaultValue={friend.firstName}
               />
             </td>
             <td>
               <input
-                name="lastName"
+                name='lastName'
                 onChange={this.handleUpdateFriendChange}
                 defaultValue={friend.lastName}
               />
             </td>
             <td>
               <input
-                name="mobileNumber"
+                name='mobileNumber'
                 onChange={this.handleUpdateFriendChange}
                 defaultValue={friend.mobileNumber}
               />

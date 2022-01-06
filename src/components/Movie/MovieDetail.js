@@ -109,7 +109,7 @@ export class MovieDetail extends Component {
     try {
       let message = this.state.friendMessage;
 
-      let result = await Axios.post('/twilio/send-sms', {
+      await Axios.post('/twilio/send-sms', {
         to: this.state.selectedFriendMobileNumber,
         message: message,
       });

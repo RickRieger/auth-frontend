@@ -39,7 +39,7 @@ export class Home extends Component {
     return (
       <div style={{textAlign: "center", marginTop: "15%", fontSize:"45px", color:'crimson'}}>
         <p>Welcome to the Movies with Friends</p>
-        <button class='home_button' onClick={this.handleOnSubmit}>Enter as a guest</button>
+        <button className='home_button' onClick={this.handleOnSubmit}>Enter as a guest</button>
       </div>
     )
   }

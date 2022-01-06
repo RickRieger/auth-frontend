@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import MovieList from './MovieList';
-import { Link } from "react-router-dom";
 
 import './Movie.css';
 
@@ -65,7 +64,7 @@ export class Movie extends Component {
     try {
       //check for session storage
       let searchedMovieTitleSessionStorage =
-        window.sessionStorage.getItem("searchedMovieTitle");
+        window.sessionStorage.getItem('searchedMovieTitle');
       if (searchedMovieTitleSessionStorage) {
         let result = await this.handleSearchMovie(
           searchedMovieTitleSessionStorage
@@ -111,13 +110,13 @@ export class Movie extends Component {
   }
   handleRandomTitle = () => {
     let randomMovieArray = [
-      "Big trouble in little china",
-      "the simpsons",
-      "Rush hour",
-      "the godfather",
-      "Luca",
-      "Pulp Fiction",
-      "The Matrix",
+      'Big trouble in little china',
+      'the simpsons',
+      'Rush hour',
+      'the godfather',
+      'Luca',
+      'Pulp Fiction',
+      'The Matrix',
     ];
     let randomSelectedMovieIndex = Math.floor(
       Math.random() * randomMovieArray.length
@@ -142,7 +141,7 @@ export class Movie extends Component {
   onSubmit = async (event) => {
     try {
       let result = await this.handleSearchMovie(this.state.movie);
-      window.sessionStorage.setItem("searchedMovieTitle", this.state.movie);
+      window.sessionStorage.setItem('searchedMovieTitle', this.state.movie);
       let totalPageArray = this.getTotalPages(
         +result.data.totalResults,
         this.state.perPage
@@ -180,8 +179,8 @@ export class Movie extends Component {
   // };
 
   showpagination = () => {
-    let totalPages = this.state.totalPage; //440
-    let perPage = this.state.perPage; //10
+    // let totalPages = this.state.totalPage; //440
+    // let perPage = this.state.perPage; //10
     let currentPage = this.state.currentPage; //1
     let maxPageLimit = this.state.maxPageLimit; // 10
     let minPageLimit = this.state.minPageLimit; // 0
@@ -206,8 +205,8 @@ export class Movie extends Component {
                   style={{
                     marginLeft: 15,
                     marginRight: 15,
-                    color: currentPage === number ? "red" : "#7c7979",
-                    cursor: "pointer",
+                    color: currentPage === number ? 'red' : '#7c7979',
+                    cursor: 'pointer',
                   }}
                   key={number}
                 >
@@ -215,6 +214,7 @@ export class Movie extends Component {
                 </span>
               );
             }
+            return '';
           })}
         </>
       );
@@ -225,16 +225,14 @@ export class Movie extends Component {
       </div>
     );
   };
-  
+
   handleGoToPage = (number) => {
     this.setState(
       {
         currentPage: number,
       },
       async () => {
-        console.log(this.state.movie);
         let result = await this.handleSearchMovie(this.state.movie);
-        console.log(result);
         this.setState({
           movieArray: result.data.Search,
         });
@@ -251,11 +249,11 @@ export class Movie extends Component {
         };
       },
       async () => {
-        let movie = "";
+        let movie = '';
         let searchedMovieTitleSessionStorage =
-          window.sessionStorage.getItem("searchedMovieTitle");
+          window.sessionStorage.getItem('searchedMovieTitle');
         movie = searchedMovieTitleSessionStorage
-          ? window.sessionStorage.getItem("searchedMovieTitle")
+          ? window.sessionStorage.getItem('searchedMovieTitle')
           : this.state.movie;
         let result = await this.handleSearchMovie(movie);
         this.setState({
@@ -287,11 +285,11 @@ export class Movie extends Component {
         };
       },
       async () => {
-        let movie = "";
+        let movie = '';
         let searchedMovieTitleSessionStorage =
-          window.sessionStorage.getItem("searchedMovieTitle");
+          window.sessionStorage.getItem('searchedMovieTitle');
         movie = searchedMovieTitleSessionStorage
-          ? window.sessionStorage.getItem("searchedMovieTitle")
+          ? window.sessionStorage.getItem('searchedMovieTitle')
           : this.state.movie;
         let result = await this.handleSearchMovie(movie);
         this.setState({
@@ -331,14 +329,14 @@ export class Movie extends Component {
           }}
         >
           <input
-            type="text"
-            placeholder="Search something..."
-            name="movie"
+            type='text'
+            placeholder='Search something...'
+            name='movie'
             onChange={this.handleOnChange}
           />
           <button onClick={this.onSubmit}>Search</button>
         </div>
-        <div className="container-movie">
+        <div className='container-movie'>
           <MovieList movieArray={this.state.movieArray} />
         </div>
         {/* <div className="container-movie">
@@ -349,17 +347,17 @@ export class Movie extends Component {
         </div> */}
 
         {this.state.totalPage <= 10 ? (
-          ""
+          ''
         ) : (
           <div
             style={{
               width: 1200,
-              margin: "0 auto",
-              textAlign: "center",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color:'white',
+              margin: '0 auto',
+              textAlign: 'center',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              color: 'white',
               marginTop: 50,
             }}
           >

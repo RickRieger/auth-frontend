@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 function MovieList(props) {
-  // console.log(props);
   return props.movieArray.map((item) => {
     return (
       <div className="img-container-outer " key={item.imdbID}>

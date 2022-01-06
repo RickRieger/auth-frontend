@@ -232,9 +232,9 @@ export class Signup extends Component {
     }
   }
   handleInputOnFocus = (event) => {
-    console.log(event.target.name);
+
     if (!this.state[`${event.target.name}OnFocus`]) {
-      console.log("217 i am here");
+
       this.setState({
         [`${event.target.name}OnFocus`]: true,
       });
