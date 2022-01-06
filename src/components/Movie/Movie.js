@@ -139,6 +139,7 @@ export class Movie extends Component {
     });
   };
   onSubmit = async (event) => {
+    event.preventDefault();
     try {
       let result = await this.handleSearchMovie(this.state.movie);
       window.sessionStorage.setItem('searchedMovieTitle', this.state.movie);
@@ -328,14 +329,17 @@ export class Movie extends Component {
             marginBottom: '50px',
           }}
         >
-          <input
-            type='text'
-            placeholder='Search something...'
-            name='movie'
-            onChange={this.handleOnChange}
-          />
-          <button onClick={this.onSubmit}>Search</button>
+          <form onSubmit={this.onSubmit}>
+            <input
+              type='text'
+              placeholder='Search something...'
+              name='movie'
+              onChange={this.handleOnChange}
+            />
+            <button type='submit'>Search</button>
+          </form>
         </div>
+
         <div className='container-movie'>
           <MovieList movieArray={this.state.movieArray} />
         </div>
