@@ -1,43 +1,44 @@
-import React, { Component } from "react";
-import { Link, NavLink } from "react-router-dom";
-import "./Nav.css";
+import React, { Component } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import './Nav.css';
 export class Nav extends Component {
   render() {
-    //console.log(this.props);
     return (
-      <nav className="Navbar">
-        <div className="h1-logo">
+      <nav className='Navbar'>
+        <div className='h1-logo'>
           <h1>
-            <Link to="/">Movie with friends!</Link>
+            <Link to={this.props.user ? '/movie' : '/'}>
+              Movie with friends!
+            </Link>
           </h1>
         </div>
-        <div className="right-side-nav">
+        <div className='right-side-nav'>
           <ul>
             <li>
               {this.props.user ? (
-                <NavLink activeClassName="selected" to="/movie">
+                <NavLink activeClassName='selected' to='/movie'>
                   Movie Search
                 </NavLink>
               ) : (
-                ""
+                ''
               )}
             </li>
             <li>
               {this.props.user ? (
-                <NavLink activeClassName="selected" to="/create-friend">
+                <NavLink activeClassName='selected' to='/create-friend'>
                   Create Friend
                 </NavLink>
               ) : (
-                ""
+                ''
               )}
             </li>
             <li>
               {this.props.user ? (
-                <NavLink activeClassName="selected" to="/profile">
+                <NavLink activeClassName='selected' to='/profile'>
                   Welcome Back - {this.props.user.email}
                 </NavLink>
               ) : (
-                <NavLink activeClassName="selected" to="/sign-up">
+                <NavLink activeClassName='selected' to='/sign-up'>
                   Sign up
                 </NavLink>
               )}
@@ -45,16 +46,16 @@ export class Nav extends Component {
             <li>
               {this.props.user ? (
                 <NavLink
-                  activeStyle={{ borderBottom: "1px solid white" }}
-                  to="/login"
+                  activeStyle={{ borderBottom: '1px solid white' }}
+                  to='/'
                   onClick={this.props.handleUserLogout}
                 >
                   Logout
                 </NavLink>
               ) : (
                 <NavLink
-                  activeStyle={{ borderBottom: "1px solid white" }}
-                  to="/login"
+                  activeStyle={{ borderBottom: '1px solid white' }}
+                  to='/login'
                 >
                   Login
                 </NavLink>

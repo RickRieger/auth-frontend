@@ -232,9 +232,9 @@ export class Signup extends Component {
     }
   }
   handleInputOnFocus = (event) => {
-    console.log(event.target.name);
+
     if (!this.state[`${event.target.name}OnFocus`]) {
-      console.log("217 i am here");
+
       this.setState({
         [`${event.target.name}OnFocus`]: true,
       });
@@ -256,7 +256,7 @@ export class Signup extends Component {
       confirmPasswordError,
     } = this.state;
     return (
-      <div className="container">
+      <div className="container" style={{backgroundColor:'rgb(58 58 58)'}}>
         <div className="form-text">Sign up</div>
         <div className="form-div">
           <form className="form" onSubmit={this.handleOnSubmit}>

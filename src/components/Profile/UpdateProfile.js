@@ -44,7 +44,7 @@ export class UpdateProfile extends Component {
       if (updatedUserProfile.status === 202) {
         console.log(this.props);
         this.props.handleUserLogout();
-        this.props.history.push("/login");
+        this.props.history.push("/");
       } else {
         this.setState({
           firstName: updatedUserProfile.data.payload.firstName,

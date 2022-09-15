@@ -1,0 +1,8 @@
+.home_button {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: grey;
+}
+.home_button:hover {
+  background-color: rgb(70, 69, 69);
+}

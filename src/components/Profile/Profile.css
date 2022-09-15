@@ -13,7 +13,7 @@
 }
 .button-div button {
   padding: 10px;
-  background-color: chocolate;
+  background-color: #006c02;
   color: white;
   width: 95%;
 }
@@ -31,7 +31,7 @@
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: purple;
+  background-color: #7a0000;
   color: white;
 }
 #friends tbody tr {
